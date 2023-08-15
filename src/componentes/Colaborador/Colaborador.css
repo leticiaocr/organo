@@ -1,5 +1,6 @@
 .colaborador {
     width: 280px;
+    position: relative;
 }
 
 .colaborador .cabecalho {
@@ -36,3 +37,8 @@
     padding: 0 16px;
 }
 
+.deletar{
+    position: absolute;
+    right: -10px;
+    top: -10px;
+}
