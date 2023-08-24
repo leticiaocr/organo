@@ -248,8 +248,8 @@ function App() {
     }));
   }
 
-  function cadastrarTime({ nome, cor }) {
-    setTimes([...times, { nome, cor, id: uuidv4() }])
+  function cadastrarTime(novoTime) {
+    setTimes([...times, { ...novoTime, id: uuidv4() } ])
   }
 
   function resolverFavorito(id) {
@@ -263,7 +263,10 @@ function App() {
   return (
     <div>
       <Banner />
-      <Formulario aoCriarTime={cadastrarTime} times={times.map(time => time.nome)} aoCadastrar={colaborador => setColaboradores([...colaboradores, colaborador])} />
+      <Formulario 
+      aoCriarTime={cadastrarTime} 
+      times={times.map(time => time.nome)}
+       aoCadastrar={colaborador => setColaboradores([...colaboradores, colaborador])} />
       <section className="times">
         <h1>Minha organização</h1>
         {times.map((time, indice) => 
